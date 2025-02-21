@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <!-- Logo and Navbar -->
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <img id="logo" src="logo.png" alt="logo" class="img-fluid">
+      </div>
+
+      <div class="col-md-10 col-lg-10 " >
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+          <div class="container-fluid">
+
+            <!-- Brand and Breadcrumb -->
+            <div>
+              <a class="navbar-brand" href="#">Add Team Members</a>
+              <div>
+                <div class="text-muted" style="font-size: 12px;">Team Member > Team Member > Add Team Member</div>
+              </div>
+            </div>
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsing navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <!-- Language Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img class="flag" src="uk.png" alt="logo"> EN(UK)
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="german.jfif" alt="logo"> Deutsch
+                        (Germany)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="dutch.png"
+                          alt="logo">Dutch(Netherlands)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="usa.png" alt="logo">English(US
+                        Default)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="south korea.png"
+                          alt="logo">Hanguk(South
+                        Korea)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="india.png" alt="logo">Hindi(India)</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="mexico.png"
+                          alt="logo">Espanol(Mexican)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="spain.png"
+                          alt="logo">Espanol(Spanish)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="france.png"
+                          alt="logo">Francais(French)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="brasil.png"
+                          alt="logo">Portugues(Brazil)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="vietnam.png" alt="logo">Tieng
+                        Viet(Vietnamese)</a></li>
+                    <li><a class="dropdown-item" href="#"><img class="flag" src="arabic.jpg" alt="logo">Arabic(UAE)</a>
+                  </ul>
+                </li>
+
+                <!-- Notification Icon -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><img class="flag" src="bell.svg" alt="Notifications"></a>
+                </li>
+
+                <!-- Settings Icon -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> <img class="flag" src="gear.svg" alt="Settings"> </a>
+                </li>
+
+                <!-- User Profile -->
+                <li class="nav-item">
+                  <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img class="profile" src="profile.png" alt="logo" style="height: 40px; width: 40px;">
+                    <span class="ms-2">Wendy Chen</span>
+                    <img class="flag" src="down.svg" alt="logo">
+                  </a>
+                  <span class="text-muted" style="font-size: 12px;">Admin</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT DIV  -->
+
+  <div class="d-md-flex d-lg-flex"> <!-- Main div for content -->
+
+<!-- Button to toggle the side panel (visible only on mobile) -->
+<button class="btn d-lg-none" id="toggleButton" type="button" style="width: 30px; height: 30px;" data-bs-toggle="collapse" data-bs-target="#sidePanel"
+  aria-expanded="false" aria-controls="sidePanel" 
+  >
+  <img src="ham.png" alt="Menu" style="width: 30px; height: 30px;  border-radius: 5px;">
+</button>
+
+
+  
+    <!-- Side Panel -->
+    <div id="sidePanel" class="side-bar collapse d-lg-block dash" style="padding-left: 3px;">
+      <!-- Accordion for the side panel content -->
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+
+        <!-- Dashboard Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <img class="icon" src="dashboard.svg" alt="symbol" height="24">
+              <span class="p-2 mb-1"> Dashboard </span>
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">My Dashboard</div>
+            <div class="accordion-body">Resource Allocation</div>
+            <div class="accordion-body">Allocation Timeline</div>
+            <div class="accordion-body">Certification Roadmap</div>
+            <div class="accordion-body">Skill Matrix</div>
+            <div class="accordion-body">Resource Billability</div>
+          </div>
+        </div>
+
+        <!-- Team Members Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              <img class="icon" src="team members.png" alt="team-members" height="24">
+              <span class="p-2 mb-1"> Team Members </span>
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Team Members</div>
+            <div class="accordion-body">Certifications</div>
+          </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              <img class="icon" src="project.png" alt="project" height="24">
+              <span class="p-2 mb-1"> Projects </span>
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">In Progress</div>
+            <div class="accordion-body">Upcoming</div>
+            <div class="accordion-body">Completed</div>
+            <div class="accordion-body">Archived</div>
+          </div>
+        </div>
+
+        <!-- Clients Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              <img class="icon" src="client.png" alt="clients" height="24">
+              <span class="p-2 mb-1"> Clients </span>
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Client Details</div>
+          </div>
+        </div>
+
+        <!-- Learning Path Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+              <img class="icon" src="learning-path.png" alt="learning-path" height="24">
+              <span class="p-2 mb-1"> Learning Path </span>
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Learning Path</div>
+            <div class="accordion-body">Courses</div>
+            <div class="accordion-body">Skill Sets</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- middle main content  -->
+    <div class="container main-content">
+
+      <div class="row">
+        <div class="col-sm-12 col-md-5 col-lg-4 offset-md-1 offset-lg-0 main-title">
+          <h5>Add Team Member</h5>
+          <span class="smalltext">Add Team Member to the organization</span>
+        </div>
+
+        <!-- This container ensures buttons are displayed in a flexible way -->
+        <div class="col-sm-12 col-lg-8  d-flex flex-wrap justify-content-end align-items-center"
+          style="padding-right: 44px;">
+          <button type="button" class="btn btn-outline-danger">Cancel</button>
+          <input class="btn btn-primary ms-3" type="submit" value="Save">
+        </div>
+      </div>
+
+
+      <div class="container row " style=" max-height:200px;">
+        <!-- ROW 1 -->
+        <div class="col-sm-12 col-md-12 col-lg-2 offset-md-3 offset-lg-0">
+          <img class="dis-img" src="displayimg.jpg" alt="displayImg">
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-10">
+            <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 write"style="padding-top: 10px;">
+
+              <label for="exampleInputEmail1" class="form-label">First Name<span style="color: red;"> *
+                </span></label>
+              <input type="text" class="form-control" id="exampleInputEmail1" style="height: 35px;" aria-describedby="
+              emailHelp">
+            </div>
+
+            <div class="col-sm-12 col-md-6 write" style="padding-top: 10px;">
+              <label for="exampleInputEmail1" class="form-label">Last Name<span style="color: red;"> * </span></label>
+              <input type="text" class="form-control" id="exampleInputEmail1" style="height: 35px;"
+                aria-describedby="emailHelp">
+
+            </div>
+
+            <div class="col-md-12 col-sm-12 write" style="padding-top: 10px;">
+              <label for="exampleInputEmail1" class="form-label">Email address<span style="color: red;"> *
+                </span></label>
+              <input type="email" class="form-control write" id="exampleInputEmail1" style="height: 35px;" aria-describedby="
+            emailHelp" ; placeholder="example@mail.com">
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- ROW 2 -->
+
+        <div class="row">
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Team Member Id</label>
+            <input type="text" class="form-control write" id="exampleInputEmail1" style="height: 35px;"
+              aria-describedby="Help" ; placeholder="Enter ID">
+          </div>
+
+
+
+          <div class="col-sm-6 col-md-3  written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Designation</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Designation</option>
+              <!-- <option selected>Select Designation</option> -->
+              <option value="1">Software Developer</option>
+              <option value="2">Font-End Developer</option>
+              <option value="3">Back-End Developer</option>
+              <option value="4">UI/UX Designerr</option>
+              <option value="5">Full Stack Developer</option>
+              <option value="6">MERN Stack Developer</option>
+              <option value="7">Cloud Architect</option>
+            </select>
+          </div>
+
+
+
+
+
+          <div class="col-sm-6 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Role</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Role</option>
+              <!-- <option selected>Select Designation</option> -->
+              <option value="1">Mentor</option>
+              <option value="2">Training Team</option>
+              <option value="3">Operations Team</option>
+              <option value="4">Sales Team</option>
+              <option value="5">Admin</option>
+              <option value="6">Associate</option>
+              <option value="7">Account Team</option>
+              <option value="8">HR Team</option>
+              <option value="9">Project Manager</option>
+              <option value="10">AssesseeAccount Team</option>
+            </select>
+
+
+          </div>
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Department</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Department</option>
+              <!-- <option selected>Select Designation</option> -->
+              <option value="1">Font-End Developement</option>
+              <option value="2">Creative Design Team</option>
+              <option value="3">Software Developement</option>
+              <option value="4">Font-End Developement</option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <!-- ROW 3 -->
+
+
+
+
+        <div class="row">
+
+
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Reporting Manager</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Reporting Manager</option>
+              <!-- <option selected>Select Designation</option> -->
+              <option value="1">Search</option>
+              <option value="2">Matt Champion</option>
+              <option value="3">Mitchel Santner</option>
+              <option value="4">Tom Lathem</option>
+              <option value="5">Martin Guptil</option>
+              <option value="6">Trent Bolt</option>
+              <option value="7">Tim Southee</option>
+              <option value="8">Kane Williamson</option>
+              <option value="9">Glenn Pillips</option>
+            </select>
+          </div>
+
+
+
+          <div class="col-sm-12 col-md-3  written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Joining Date</label>
+            <input type="date" class="form-control write" id="exampleInputEmail1" style="height: 35px;"
+              aria-describedby="Help" ; placeholder="Select Date">
+          </div>
+
+
+          <div class="col-sm-12 col-md-3  written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Role</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Billability</option>
+              <option value="1">Billable</option>
+              <option value="2">Non Billable</option>
+              <option value="3">Partly Billable</option>
+            </select>
+
+
+          </div>
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Availablity</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Availablity</option>
+              <option value="1">Available</option>
+              <option value="2">Non Available</option>
+            </select>
+          </div>
+
+
+
+
+        </div>
+
+        <!-- ROW 4 -->
+
+        <div class="row ">
+
+          <div class="col-sm-12 col-md-1 written write"
+            style="height: 40px; width: 155px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Total Experience</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Year</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <div class="col-sm-12 col-md-1 written write"
+            style="height: 40px; width: 155px; margin-top: 38px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label"><span class="mb-2"> </span></label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Month</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1 write" class="form-label">Cluster</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Cluster</option>
+              <option value="1">Delivery</option>
+              <option value="2">Deployment</option>
+            </select>
+          </div>
+
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Available From</label>
+            <input type="date" class="form-control write" id="exampleInputEmail1" style="height: 35px;"
+              aria-describedby="Help" ; placeholder="Select Date">
+          </div>
+
+
+          <div class="col-sm-12 col-md-3 written write" style="height: 40px; margin-top: 30px; align-items:end;">
+            <label for="exampleInputEmail1" class="form-label">Tags</label>
+            <select class="form-select write" aria-label="Default select example">
+              <option selected disabled value="">Select Tags</option>
+              <option value="1">Available</option>
+              <option value="2">Not Available</option>
+              <option value="3">Replacement</option>
+              <option value="4">Resigned</option>
+              <option value="5">Shadow</option>
+            </select>
+          </div>
+        </div>
+
+
+
+        <!-- ROW 5 BIO -->
+        <div class="row">
+          <div class="col-sm-12 col-md-12 ">
+            <div class="mt-4 pt-3">
+              <label for="coverletter">Bio</label><br>
+              <div class="btn-group d-flex flex-wrap" role="group" aria-label="Button group with nested dropdown">
+
+                <!-- Normal Dropdown Button -->
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-light dropdown-toggle btn-sm" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class=" b write">Normal</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Left-Align</a></li>
+                    <li><a class="dropdown-item" href="#">Right-Align</a></li>
+                  </ul>
+                </div>
+
+                <!-- Sans Serif Dropdown Button -->
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-light dropdown-toggle btn-sm" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="b">Sans Serif</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Times New Roman</a></li>
+                    <li><a class="dropdown-item" href="#">Calibri</a></li>
+                    <li><a class="dropdown-item" href="#">Arial</a></li>
+                    <li><a class="dropdown-item" href="#">Monospace</a></li>
+                    <li><a class="dropdown-item" href="#">Old English</a></li>
+                  </ul>
+                </div>
+
+                <!-- Smaller icon buttons (with smaller icons) -->
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="bold.svg"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="italic (1).svg"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="underline.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="dollar.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg"
+                    src="quotation_10426427.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg"
+                    src="numberedBullets.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg"
+                    src="unordered bullets.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="left.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="right.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg"
+                    src="share-link_1389029.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="gallery.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="video.png"></button>
+                <button type="button" class="btn btn-light btn-sm"><img class="iconimg" src="TX.png"></button>
+              </div>
+
+              <textarea rows="5" class="form-control" required placeholder="Write Here..."></textarea>
+      
+            </div>
+          </div>
+        </div>
+        <div 
+         
+        class="row mt-4 pt-3">
+          <!--ROW 6 RESUME -->
+          <div class="col-sm-12 col-md-7  ">
+            <label for="name" class="form-label">Upload CV</label><br>
+            <div class="uploadcv" style="border: 2px solid rgb(226, 226, 226); cursor: pointer; ">
+              <label for="form-file" class="form-label mt-4 mb-4" style="padding-left:  30px; padding-right: 40px;">
+                Drag and drop the file here or choose file to upload</label>
+              <button type="button" class="btn btn-primary align-self-end upb md-margin">
+                Upload
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ROW 7 -->
+
+        <div class="row pt-0"></div>
+
+        <div class="col-12" style="height: 40px; width: 155px; margin-top: 0px; align-items:end;"></div>
+        <h5>Add Skill Sets</h5>
+        <label for="exampleInputEmail1" class="form-label write">Skill Sets</label>
+        <select class="form-select write" aria-label="Default select example">
+          <option selected disabled value="">Select Skill Sets</option>
+          <option value="1">HTML</option>
+          <option value="2">PYTHON</option>
+          <option value="3">CSS</option>
+          <option value="4">JavaScript</option>
+          <option value="5">Bootstrap</option>
+          <option value="6">CSS5</option>
+          <option value="7">Java</option>
+        </select>
+
+        
+
+ <!-- row -->
+ <div class="row mt-4">
+
+  <div class="col-12 col-md-1 col-lg-1" style="text-align: center; padding-top: 40px;">
+    <strong  class="hea">HTML</strong>
+  </div>
+
+  <div class="col-12 col-md-2 col-lg-2 " style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Level</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Experience</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Experience </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Year</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px; margin-top: 8px;">
+    <label for="exampleInputEmail1" class="form-label write"> </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Months</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed By</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Assessed By</option>
+      <option value="1">Search</option>
+      <option value="2">Matt Champion</option>
+      <option value="3">Mitchel Santner</option>
+      <option value="4">Tom Lathem</option>
+      <option value="5">Martin Guptil</option>
+      <option value="6">Trent Bolt</option>
+      <option value="7">Tim Southee</option>
+      <option value="8">Kane Williamson</option>
+      <option value="9">Glenn Pillips</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed On</label>
+    <input type="date" class="form-control write" placeholder="Select Date" ></input>
+  </div>
+
+  <div class="col-12 col-md-1">
+    <img src="trash.svg" alt="trash" style="height:26px; margin-top: 33px;">
+  </div>
+
+</div>
+<!-- END OF ROW -->
+
+ <!-- row -->
+ <div class="row mt-4">
+
+  <div class="col-12 col-md-1" style="text-align: center; padding-top: 40px;">
+    <strong class="hea">Python</strong>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Level</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Experience</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Experience </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Year</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px; margin-top: 8px;">
+    <label for="exampleInputEmail1" class="form-label write"> </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Months</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed By</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Assessed By</option>
+      <option value="1">Search</option>
+      <option value="2">Matt Champion</option>
+      <option value="3">Mitchel Santner</option>
+      <option value="4">Tom Lathem</option>
+      <option value="5">Martin Guptil</option>
+      <option value="6">Trent Bolt</option>
+      <option value="7">Tim Southee</option>
+      <option value="8">Kane Williamson</option>
+      <option value="9">Glenn Pillips</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed On</label>
+    <input type="date" class="form-control write" placeholder="Select Date">
+  </div>
+
+  <div class="col-12 col-md-1">
+    <img src="trash.svg" alt="trash" style="height:26px; margin-top: 33px;">
+  </div>
+
+</div>
+<!-- END OF ROW -->
+
+ <!-- row -->
+ <div class="row mt-4">
+
+  <div class="col-12 col-md-1" style="text-align: center; padding-top: 40px;">
+    <strong class="hea">Javascript</strong>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Level</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Experience</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Experience </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Year</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px; margin-top: 8px;">
+    <label for="exampleInputEmail1" class="form-label write"> </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Months</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed By</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Assessed By</option>
+      <option value="1">Search</option>
+      <option value="2">Matt Champion</option>
+      <option value="3">Mitchel Santner</option>
+      <option value="4">Tom Lathem</option>
+      <option value="5">Martin Guptil</option>
+      <option value="6">Trent Bolt</option>
+      <option value="7">Tim Southee</option>
+      <option value="8">Kane Williamson</option>
+      <option value="9">Glenn Pillips</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed On</label>
+    <input type="date" class="form-control write" placeholder="Select Date" >
+  </div>
+  
+
+  <div class="col-12 col-md-1">
+    <img src="trash.svg" alt="trash" style="height:26px; margin-top: 33px;">
+  </div>
+
+</div>
+<!-- END OF ROW -->
+
+
+ <!-- row -->
+ <div class="row mt-4 mb-5" style="padding-bottom: 70px;">
+
+  <div class="col-12 col-md-1" style="text-align: center; padding-top: 40px;">
+    <strong class="hea">Bootstrap</strong>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Level</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Experience</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Experience </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Year</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px; margin-top: 8px;">
+    <label for="exampleInputEmail1" class="form-label write"> </label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Months</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed By</label>
+    <select class="form-select write" aria-label="Default select example">
+      <option selected disabled value="">Select Assessed By</option>
+      <option value="1">Search</option>
+      <option value="2">Matt Champion</option>
+      <option value="3">Mitchel Santner</option>
+      <option value="4">Tom Lathem</option>
+      <option value="5">Martin Guptil</option>
+      <option value="6">Trent Bolt</option>
+      <option value="7">Tim Southee</option>
+      <option value="8">Kane Williamson</option>
+      <option value="9">Glenn Pillips</option>
+    </select>
+  </div>
+
+  <div class="col-12 col-md-2" style="font-size: 16px;">
+    <label for="exampleInputEmail1" class="form-label write">Assessed On</label>
+    <input type="date" class="form-control write" placeholder="Select Date" >
+  </div>
+  
+
+  <div class="col-12 col-md-1">
+    <img src="trash.svg" alt="trash" style="height:26px; margin-top: 33px;">
+  </div>
+
+</div>
+<!-- END OF ROW -->
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  </div>
+  </div>
+</body>
+
+</html>

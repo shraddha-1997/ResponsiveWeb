@@ -1,0 +1,299 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  font-size: medium;
+}
+
+.dashboard {
+  margin-top: 20px;
+}
+
+.user-info {
+  display: flex;
+  border: 1;
+}
+
+.nav-bar {
+  margin-left: 100px;
+  width: 1300px;
+}
+
+.side-bar {
+  text-transform: uppercase;
+  font-size: 40;
+  margin: 5px;
+  padding-left: 30px;
+  height: 100vh;
+}
+
+.flag {
+  height: 20px;
+  width: 20px;
+}
+
+
+.smalltext {
+  font-size: 13px;
+}
+
+
+
+.uploadcv:hover {
+  border: 2px dashed blue !important;
+}
+
+
+
+
+
+
+.iconimg {
+  height: 20px;
+}
+
+
+
+.btn-light {
+  padding: 2px 5px; /* Reduces padding inside each button */
+  margin: 0 2px; /* Reduces space between buttons */
+}
+
+.iconimg {
+  width: 18px;/* Adjust the size of the icon */
+  height: 18px;/* Adjust the size of the icon */
+}
+
+
+
+
+
+/* PHONE  */
+@media screen and (max-width: 576px) {
+  .btn {
+    /* background-color: rgb(245, 246, 247); */
+    padding-left: 5px;
+    margin-left: 12px;
+
+  }
+
+  .side-bar {
+    max-width: 250px;
+    padding-left: 10px;
+  }
+
+
+  .accordion-button {
+    /*  Reduce icon size and text size inside the menu */
+    padding: 10px;
+  }
+
+  .accordion-body {
+    font-size: 14px;
+  }
+
+  .icon {
+    height: 18px;
+  }
+
+  /* Adjust the toggle button icon size */
+  .navbar-toggler-icon {
+    width: 15px;
+    height: 15px;
+   
+  }
+
+
+  .fields {
+    width: 100%;
+    background-color: rgb(127, 90, 211);
+  }
+
+
+  .written {
+    margin-bottom: 20px;
+  }
+
+  .dis-img {
+
+    height: 230px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+  .b {
+    font-size: 12px;
+  }
+
+  .btn-group-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center buttons on mobile */
+    gap: 5px;
+    /* Reduce gap on mobile */
+  }
+
+  .btn-light {
+    padding: 5px 10px;
+    /* Reduce padding for mobile view */
+    font-size: 12px;
+    /* Reduce font size for mobile */
+  }
+
+  .iconimg {
+    width: 14px;
+    height: 14px;
+    /* Smaller icons for mobile */
+  }
+
+  .btn-group .dropdown-menu {
+    min-width: 120px;
+
+    /* Adjust the width of dropdown */
+  }
+
+
+  .btn.md-margin{
+    margin-left: 130px;
+  }
+  
+
+  #logo {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+
+}
+
+
+
+/* sm (for medium-sized devices) */
+@media (min-width: 576px) and (max-width: 768px) {
+  .btn-group-wrapper {
+    justify-content: flex-start;
+  }
+
+  .btn-light {
+    padding: 6px 10px;
+  }
+
+  .iconimg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dis-img {
+
+    height: 320px;
+    width: 100%;
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .written {
+    padding-bottom: 70px;
+  }
+
+   
+.btn.md-margin{
+  margin-left: 160px;
+}
+
+  #logo {
+    padding-top: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height:50px ;
+  }
+
+
+}
+
+
+/* TABLET   */
+@media (min-width: 768px) and (max-width: 992px) {
+  .dis-img {
+    border-radius: 50%;
+    height: 230px;
+    width: 230px;
+    padding-bottom: 18px;
+  }
+
+  
+#logo {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.main-title{
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+.write{
+  font-size: 13px;
+}
+
+.btn.md-margin{
+  margin-left: 150px;
+}
+
+.hea{
+  font-size: 14px;
+  font-weight: 800;
+  margin-left: -30px;
+}
+}
+
+
+/* LAPTOP/ DESKTOPS */
+@media screen and (min-width: 992px) {
+
+  .main-content {
+
+    /* height: 30px; */
+    width: 1400px;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+
+  .main-title {
+    padding-left: 30px;
+  }
+
+  .row {
+    padding-top: 20px;
+  }
+
+  .dis-img {
+    border-radius: 50%;
+    height: 120px;
+    width: 140px;
+    margin-top: 30px;
+  }
+
+
+  .upb {
+    margin-left: 60px;
+  }
+
+
+  #logo {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 0px;
+  }
+
+
+}
